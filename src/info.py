@@ -2,15 +2,15 @@ html = """<html>
 <head>
 <title>Schule als Staat Info</title>
 <script>
+var i=1;
 function pageScroll() {
-    window.scrollBy(0,1);
+    window.scrollTo(0,i);
+    i++;
     var body = document.body,
     html = document.documentElement;
-
-var height = Math.max( body.scrollHeight, body.offsetHeight, 
-                       html.clientHeight, html.scrollHeight, html.offsetHeight );
-    if(window.scrollY+window.innerWidth>heighthtml.clientHeight-1) {
-        window.scrollBy(0,-height);
+    if(i>document.documentElement.scrollHeight-1) {
+        i = 0;
+        window.scrollTo(0,0);
     }
     scrolldelay = setTimeout(pageScroll,10);
 }
