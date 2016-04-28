@@ -12,7 +12,10 @@ class chart:
         self.scale = scale
 
     def set_value(self, val):
-        self.append(val)
+        self.val = val
+
+    def add_value(self, val):
+        self.val.append(val)
 
     def set_style(self, s):
         self.style = s
@@ -22,6 +25,6 @@ class chart:
         num = 0
         for i in self.val:
             l.append([num, self.h-i])
-            num += w/len(self.val)
+            num += self.w/len(self.val)
         return display_svg.draw_polyline(display_svg.create_poly_list(l), color)
         

@@ -8,7 +8,7 @@ function pageScroll() {
     i++;
     var body = document.body,
     html = document.documentElement;
-    if(i>document.documentElement.scrollHeight-1) {
+    if(i>Math.max(window.innerHeight,document.body.offsetHeight,document.documentElement.clientHeight)) {
         i = 0;
         window.scrollTo(0,0);
     }
