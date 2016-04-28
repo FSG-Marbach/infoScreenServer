@@ -11,6 +11,7 @@ function pageScroll() {
     if(i>Math.max(window.innerHeight,document.body.offsetHeight,document.documentElement.clientHeight)) {
         i = 0;
         window.scrollTo(0,0);
+        location.reload(); 
     }
     scrolldelay = setTimeout(pageScroll,10);
 }
