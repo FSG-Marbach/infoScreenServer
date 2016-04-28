@@ -49,8 +49,8 @@ class info:
     def add_info(self, title, text):
         self.display[title] = text
 
-    def add_svg(self, title, svg, w, h):
-        self.display[title] = "<svg width=\"" + str(w) +"\" height=\"" + str(h) + "\">" + svg + "</svg>"
+    def add_svg(self, title, svg, w, h, t=""):
+        self.display[title] = "<svg width=\"" + str(w) +"\" height=\"" + str(h) + "\">" + svg + "</svg><br><br>" + t
 
     def get_html(self):
         string = ""
