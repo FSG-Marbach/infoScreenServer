@@ -21,19 +21,23 @@ class chart:
         self.style = s
 
     def draw(self, color):
+        code = ""
+        code += display_svg.draw_line(0,self.h,self.w, self.h,"#000000")
+        code += display_svg.draw_line(0,0,0, self.h,"#000000")
+        
         if self.style == 1:
             l = []
             num = 0
             for i in self.val:
                 l.append([num, self.h-i])
                 num += self.w/len(self.val)
-            return display_svg.draw_polyline(display_svg.create_poly_list(l), color)
+            return code + display_svg.draw_polyline(display_svg.create_poly_list(l), color)
         elif self.style == 2:
             num = 0
             s = ""
             for i in self.val:
                 s += display_svg.draw_line(num,self.h,num, self.h-i,color)
                 num += self.w/len(self.val)
-            return s
+            return code + s
         else:
             return ""
